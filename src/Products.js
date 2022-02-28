@@ -7,7 +7,7 @@ function Products() {
         try {
         const response = await fetch("https://codexplained.se/electronics.php");
         const data = await response.json();
-        console.log(data);
+//console.log(data);
 
         setProducts(data);
         } catch(error) {
@@ -21,8 +21,6 @@ useEffect( () => {
 
   return (
     <div>
-        <h1>ProductList</h1>
-
         <ProductList products={products} />
     </div>
   )

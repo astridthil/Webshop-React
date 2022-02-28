@@ -1,9 +1,9 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Product from './Product.js';
-import Footer from './Footer';
-import ProductList from './ProductList';
 import Products from './Products';
+import Footer from './Footer';
+import ProductPage from './ProductPage';
 
 
 function App() {
@@ -11,14 +11,14 @@ function App() {
     <div className="App">
       <BrowserRouter>
       <Routes>
-        <Route path='/product' element={<Product />} />
-
+      <Route path='/' element={<Products />} />
+        <Route path='/products' element={<Product />} />
+        <Route path='/products/:id' element={<ProductPage />} />
       </Routes>
       </BrowserRouter>
-      
+  
+
       <Footer />
-      <ProductList />
-      <Products />
 
 
     </div>

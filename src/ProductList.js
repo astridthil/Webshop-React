@@ -24,7 +24,7 @@ fetchData();
 
   return (
     <div>
-        <h1>Product List</h1>
+        <h1>Product list</h1>
         <div>
             {
                 products.map((product) => (

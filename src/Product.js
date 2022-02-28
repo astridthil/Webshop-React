@@ -1,13 +1,39 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import {Link} from 'react-router-dom'
 
 function Product({product}) {
+  const [products, setProducts] = useState([]);
+  const fetchData = async () => {
+      try {
+      const response = await fetch("https://codexplained.se/electronics.php");
+      const data = await response.json();
+      //console.log(data);
+
+      setProducts(data);
+      } catch(error) {
+          console.log(error);
+      }
+}
+
+useEffect( () => {
+  fetchData();
+}, [])
+
+
+fetchData();
+
   return (
-    <div>
-        <article key={product.id}>
-            <h1>{product.title}</h1>
+    products.map((product) => (
+      <div>
+       <article key={product.id}>
+            <Link to={`/products/${product.id}`}><h1>{product.title}</h1></Link>
             <p>{product.price}</p>
+            <p>{product.description}</p>
+            <p>{product.storage}</p>
+            <button>Add to cart</button>
         </article>
-    </div>
+      </div>
+      ))
   )
 }
 
