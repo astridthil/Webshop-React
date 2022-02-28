@@ -23,13 +23,15 @@ useEffect( () => {
     fetchData();
 }, []);
   return (
-    <div>
-        <h1>a specific product with id {params.id}</h1>
+    <div className='productpage'>
+      <p>image</p>
+      <div className='productpage-info'>
         <h1>{product.title}</h1>
-        <p>{product.price}</p>
-        <p>{product.description}</p>
+        <p>{product.price} SEK</p>
+        <p>About the product: {product.description}</p>
         <p>Products in stock: {product.storage}</p>
-        <button>Add to cart</button>
+        <button className='cartbtn'>Add to cart</button>
+        </div>
     </div>
   )
 }
