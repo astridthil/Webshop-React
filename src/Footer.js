@@ -7,9 +7,9 @@ function Footer() {
         <div className='footer-contact-follow'>
           <div className='footer-contact'>
             <div><b>Contact</b></div>
-            <div>0768999596</div>
-            <div>astrid.thil@gmail.com</div>
-            <div>Luntmakargatan 78</div>
+            <div>08-12 34 56</div>
+            <div>info@reactwebshop.com</div>
+            <div>Gustavslundsvägen 151 D</div>
           </div>
         <div className='footer-follow'>
           <div><b>Follow us</b></div>
