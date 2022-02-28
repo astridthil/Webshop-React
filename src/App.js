@@ -2,7 +2,8 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Product from './Product.js';
 import Footer from './Footer';
-
+import ProductList from './ProductList';
+import Products from './Products';
 
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
       </BrowserRouter>
       
       <Footer />
+      <ProductList />
+      <Products />
 
 
     </div>

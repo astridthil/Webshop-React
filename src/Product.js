@@ -1,8 +1,13 @@
 import React from 'react'
 
-function Product() {
+function Product({product}) {
   return (
-    <div>Product</div>
+    <div>
+        <article key={product.id}>
+            <h1>{product.title}</h1>
+            <p>{product.price}</p>
+        </article>
+    </div>
   )
 }
 
