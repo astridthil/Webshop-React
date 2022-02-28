@@ -38,13 +38,11 @@
 }
 
 .footer-contact {
-  background-color: lightgoldenrodyellow;
   width: 25%;
   text-align: left;
 }
 
 .footer-follow {
-  background-color: lightsalmon;
   width: 25%;
   text-align: right;
 }
@@ -57,11 +55,10 @@
 }
 
 .footer {
-  background-color: pink;
+  background-color: lightblue;
   width: 100%;
 }
 
 .footer-copy {
-  background-color: hotpink;
   height: 3rem;
 }
