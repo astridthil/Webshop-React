@@ -3,9 +3,8 @@ import { useParams } from 'react-router-dom'
 import Product from './Product';
 import Checkout from './Checkout';
 
-function ProductPage() {
-
-
+function ProductPage(props) {
+  const { checkoutItems, setCheckoutItems, addToCheckout } = props;
 //Hämta enskilt api
     const [product, setProduct] = useState([]);
     const params = useParams();
@@ -32,7 +31,7 @@ return (
         <p>{product.price} SEK</p>
         <p>About the product: {product.description}</p>
         <p>Products in stock: {product.storage}</p>
-        <button className='cartbtn'>Add to cart</button>
+        <button onClick={() => addToCheckout(product.title)} className='cartbtn'>Add to cart</button>
         </div>
     </div>
   )
