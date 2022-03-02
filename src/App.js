@@ -1,7 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Product from './Product.js';
-
 import ProductPage from './ProductPage';
 import Checkout from './Checkout';
 import { useState } from 'react';
@@ -32,6 +31,7 @@ function App() {
         <li> <Link to='/products'>products</Link> </li>
       </ul>
       </BrowserRouter>
+   
       
     </div>
   );
