@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react';
 
 function Checkout(props) {
-    const { product } = props;
-    const [checkoutItems, setCheckoutItems] = useState([]);
+    const { checkoutItems } = props;
+    /*const [checkoutItems, setCheckoutItems] = useState([]);
 
     const addToCheckout = (product) => {
         setCheckoutItems([...checkoutItems, product]);
@@ -12,19 +12,17 @@ function Checkout(props) {
         <div key={product.id}>
           {`${product.title}: ${product.price}`}
         </div>
-      ));
+      ));*/
     
 
     console.log(checkoutItems);
 
   return (
-    <div>
-        <h1>checkout items</h1>
-        <p>här är mina varor:{checkoutItems}</p>
-        <p>du har {checkoutItems} st checkoutitems i korgen</p>
-        <button onClick={() => setCheckoutItems(product.title)}>lägg till</button>
+    checkoutItems.map((product) => (
+    <div key={product.id}>
+    <p>{checkoutItems}</p>
     </div>
-  );
+  )));
 }
 
 export default Checkout

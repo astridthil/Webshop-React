@@ -4,27 +4,35 @@ import Product from './Product.js';
 import Footer from './Footer';
 import ProductPage from './ProductPage';
 import Checkout from './Checkout';
+import { useState } from 'react';
+import {Link} from 'react-router-dom'
 
 
 function App() {
+  const [checkoutItems, setCheckoutItems] = useState([]);
+
+    const addToCheckout = (product) => {
+        setCheckoutItems([...checkoutItems, product]);
+    }
+   /* const checkoutProducts = checkoutItems.map((product) => (
+        <div key={product.id}>
+          {`${product.title}: ${product.price}`}
+        </div>
+      ));*/
   return (
     <div className="App">
       <BrowserRouter>
       <Routes>
         <Route path='/products' element={<Product />} />
-        <Route path='/products/:id' element={<ProductPage />} />
-        <Route path='/checkout' element={<Checkout />} />
+        <Route path='/products/:id' element={<ProductPage addToCheckout={addToCheckout} checkoutItems={checkoutItems}/>} />
+        <Route path='/checkout' element={<Checkout addToCheckout={addToCheckout} checkoutItems={checkoutItems}/>} />
       </Routes>
-      </BrowserRouter>
       <ul>
-        <li> <a href='/checkout'>checkout</a> </li>
-        <li> <a href='/products'>products</a> </li>
+        <li> <Link to='/checkout'>checkout</Link> </li>
+        <li> <Link to='/products'>products</Link> </li>
       </ul>
-  
-
+      </BrowserRouter>
       <Footer />
-
-
     </div>
   );
 }

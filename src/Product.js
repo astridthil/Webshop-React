@@ -27,6 +27,7 @@ fetchData();
       <div>
        <article key={product.id}>
             <Link to={`/products/${product.id}`}><h1>{product.title}</h1></Link>
+            <img src={product.url} alt="icons" className='product-img'/>
             <p>{product.price}</p>
             <p>{product.description}</p>
             <p>{product.storage}</p>

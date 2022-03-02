@@ -79,3 +79,7 @@
   justify-content: center;
   margin-top: 5rem;
 }
+
+.product-img {
+  width: 20rem;
+}
