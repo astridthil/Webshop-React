@@ -31,7 +31,7 @@ return (
         <p>{product.price} SEK</p>
         <p>About the product: {product.description}</p>
         <p>Products in stock: {product.storage}</p>
-        <button onClick={() => addToCheckout([product.title, product.price, product.url])} className='cartbtn'>Add to cart</button>
+        <button onClick={() => addToCheckout(product)} className='cartbtn'>Add to cart</button>
         </div>
     </div>
   )

@@ -22,8 +22,9 @@ function Checkout(props) {
     <div key={product.id}>
       <div>
         <p>{product.title}</p>
+        <p>{product.price}</p>
+        <img src={product.url} alt="icons" className='product-img'/>
       </div>
-    <p>{checkoutItems}</p>
     </div>
   )));
 }
