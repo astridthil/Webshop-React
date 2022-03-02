@@ -20,6 +20,9 @@ function Checkout(props) {
   return (
     checkoutItems.map((product) => (
     <div key={product.id}>
+      <div>
+        <p>{product.title}</p>
+      </div>
     <p>{checkoutItems}</p>
     </div>
   )));

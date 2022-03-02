@@ -68,8 +68,9 @@
 }
 
 .productpage-info {
-  width: 40%;
+  width: 20rem;
   height: 25rem;
+  text-align: left;
 }
 
 .productpage {
@@ -77,9 +78,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 5rem;
 }
 
 .product-img {
-  width: 20rem;
+  height: 20rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin: 1rem;
+
 }
