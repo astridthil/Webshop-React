@@ -71,13 +71,17 @@
   width: 20rem;
   height: 25rem;
   text-align: left;
+  background-color: lightpink;
 }
 
 .productpage {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
+  background-color: antiquewhite;
+  width: 50rem;
+  margin: auto;
+  margin-top: 10rem;
 }
 
 .product-img {
@@ -85,4 +89,53 @@
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   margin: 1rem;
 
+}
+
+
+
+.checkout-items {
+  display: flex;
+  flex-direction: row;
+  background-color: lightcoral;
+  width: 40rem;
+  align-items: center;
+
+}
+
+.checkout-img {
+  height: 5rem;
+}
+
+.checkout-title-price {
+  display: flex;
+  flex-direction: row;
+  background-color: blue;
+  width: 100%;
+  margin: 1rem;
+}
+
+.checkout-page {
+  background-color: lightpink;
+  display: flex;
+  flex-direction: column;
+  width: 40rem;
+  margin: auto;
+  margin-top: 10rem;
+}
+
+.btns {
+  background-color: aqua;
+  text-align: right;
+  width: 100%;
+  margin: 1rem;
+}
+.plus-btn {
+  border-radius: 50%;
+}
+.minus-btn {
+  border-radius: 50%;
+}
+
+.total {
+  text-align: right;
 }
