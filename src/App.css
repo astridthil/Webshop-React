@@ -84,16 +84,22 @@
 }
 
 .btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
   background-color: aqua;
-  text-align: right;
   width: 100%;
   margin: 1rem;
 }
+
 .plus-btn {
-  border-radius: 50%;
+  background-color: transparent;
+  border-color: transparent;
 }
+
 .minus-btn {
-  border-radius: 50%;
+  background-color: transparent;
+  border-color: transparent;
 }
 
 .total {

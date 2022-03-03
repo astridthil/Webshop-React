@@ -11,6 +11,7 @@ function App() {
   const [checkoutItems, setCheckoutItems] = useState([]);
   const [sum, setSum] = useState(0)
 
+
     const addToCheckout = (product) => {
         setCheckoutItems([...checkoutItems, product]);
 
@@ -31,7 +32,7 @@ function App() {
       <Routes>
         <Route path='/products' element={<Product />} />
         <Route path='/products/:id' element={<ProductPage setSum = {setSum} sum = {sum}  addToCheckout={addToCheckout} checkoutItems={checkoutItems}/>} />
-        <Route path='/checkout' element={<Checkout sum = {sum} addToCheckout={addToCheckout} checkoutItems={checkoutItems} setCheckoutItems={setCheckoutItems}/>} />
+        <Route path='/checkout' element={<Checkout setCheckoutItems={setCheckoutItems} sum = {sum} addToCheckout={addToCheckout} checkoutItems={checkoutItems} setCheckoutItems={setCheckoutItems}/>} />
       </Routes>
       <ul>
         <li> <Link to='/checkout'>checkout</Link> </li>

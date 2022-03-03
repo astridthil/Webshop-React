@@ -2,18 +2,13 @@ import React, { useState } from 'react';
 import {Link} from 'react-router-dom'
 
 function Checkout(props) {
-    const { checkoutItems, sum } = props;
-    /*const [checkoutItems, setCheckoutItems] = useState([]);
+    const { checkoutItems, sum, setCheckoutItems } = props;
 
-    const addToCheckout = (product) => {
-        setCheckoutItems([...checkoutItems, product]);
+    const deleteItem = (product) => {
+      let filteredItems = checkoutItems.filter(p => p.id !== product.id)
+      console.log(filteredItems)
+      setCheckoutItems(filteredItems)
     }
-
-    const checkoutProducts = checkoutItems.map((product) => (
-        <div key={product.id}>
-          {`${product.title}: ${product.price}`}
-        </div>
-      ));*/
     
 
     console.log(props);
@@ -28,7 +23,11 @@ function Checkout(props) {
       <div className='checkout-items'>
       <img src={product.url} alt="icons" className='checkout-img'/>
         <p className='checkout-title-price'>{product.title} {product.price} SEK</p>
-        <div className='btns'><button className='minus-btn'>-</button><button className='plus-btn'>+</button><button className='delete-btn'>Delete</button></div>
+        <div className='btns'>
+        <button className='minus-btn'>-</button>
+        <p>Antal</p>
+        <button className='plus-btn'>+</button>
+        <button className='delete-btn' onClick={() => deleteItem(product)}>Delete</button></div>
       </div>
     </div>
   ))}
