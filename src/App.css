@@ -8,6 +8,11 @@
   text-align: right;
 }
 
+.footer-social {
+  display: flex;
+  flex-direction: row;
+}
+
 .footer-contact-follow {
   display: flex;
   flex-direction: row;
@@ -19,26 +24,25 @@
   background-color: lightblue;
   width: 100%;
   padding: 2rem;
-  position: absolute;
   bottom: 0;
 }
 
 .footer-copy {
   height: 1rem;
+  text-align: center;
 }
 
 .productpage-info {
   width: 20rem;
   height: 25rem;
   text-align: left;
-  background-color: lightpink;
 }
 
 .productpage {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: antiquewhite;
+  background-color: rgb(216, 213, 210);
   width: 50rem;
   margin: auto;
   margin-top: 10rem;

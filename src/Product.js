@@ -5,7 +5,7 @@ function Product({product}) {
   const [products, setProducts] = useState([]);
   const fetchData = async () => {
       try {
-      const response = await fetch("https://codexplained.se/shoes.php");
+      const response = await fetch("https://codexplained.se/cakes.php");
       const data = await response.json();
       //console.log(data);
 
@@ -37,5 +37,7 @@ useEffect( () => {
       ))
   )
 }
+
+
 
 export default Product

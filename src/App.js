@@ -5,6 +5,7 @@ import ProductPage from './ProductPage';
 import Checkout from './Checkout';
 import { useState } from 'react';
 import {Link} from 'react-router-dom'
+import Footer from './Footer'
 
 
 function App() {
@@ -21,11 +22,7 @@ function App() {
           setSum(sum + product.price)
         }
     }
-   /* const checkoutProducts = checkoutItems.map((product) => (
-        <div key={product.id}>
-          {`${product.title}: ${product.price}`}
-        </div>
-      ));*/
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -38,9 +35,8 @@ function App() {
         <li> <Link to='/checkout'>checkout</Link> </li>
         <li> <Link to='/products'>products</Link> </li>
       </ul>
+      <Footer />
       </BrowserRouter>
-  
-      
     </div>
   );
 }
