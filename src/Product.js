@@ -5,7 +5,7 @@ function Product({product}) {
   const [products, setProducts] = useState([]);
   const fetchData = async () => {
       try {
-      const response = await fetch("https://codexplained.se/electronics.php");
+      const response = await fetch("https://codexplained.se/shoes.php");
       const data = await response.json();
       //console.log(data);
 
@@ -20,7 +20,7 @@ useEffect( () => {
 }, [])
 
 
-fetchData();
+
 
   return (
     products.map((product) => (

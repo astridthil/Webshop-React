@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 function ProductPage(props) {
-  const { addToCheckout } = props;
+  const { addToCheckout, setSum, sum } = props;
+  
 //Hämta enskilt api
     const [product, setProduct] = useState([]);
     const params = useParams();
     const fetchData = async () => {
         try {
-        const response = await fetch("https://codexplained.se/electronics.php?id=" + params.id);
+        const response = await fetch("https://codexplained.se/shoes.php?id=" + params.id);
         const data = await response.json();
 //console.log(data);
 
@@ -21,7 +22,7 @@ useEffect( () => {
     fetchData();
 }, []);
 
-fetchData();
+
   
 return (
     <div className='productpage'>

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Link} from 'react-router-dom'
 
 function Checkout(props) {
-    const { checkoutItems } = props;
+    const { checkoutItems, sum } = props;
     /*const [checkoutItems, setCheckoutItems] = useState([]);
 
     const addToCheckout = (product) => {
@@ -16,8 +16,9 @@ function Checkout(props) {
       ));*/
     
 
-    console.log(checkoutItems);
+    console.log(props);
 
+    
   return (
     <table className='checkout-page'>
       <div>Checkout items</div>
@@ -29,9 +30,9 @@ function Checkout(props) {
         <p className='checkout-title-price'>{product.title} {product.price} SEK</p>
         <div className='btns'><button className='minus-btn'>-</button><button className='plus-btn'>+</button><button className='delete-btn'>Delete</button></div>
       </div>
-      <div className='total'>Total price</div>
     </div>
   ))}
+  <div className='total'>Total price: {sum}</div>
   </table>);
 }
 
