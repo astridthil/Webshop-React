@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom'
+import { HiOutlineTrash } from "react-icons/hi";
+import { motion } from 'framer-motion'
 
 function Checkout(props) {
     const { checkoutItems, sum, setCheckoutItems } = props;
@@ -16,22 +18,32 @@ function Checkout(props) {
     
   return (
     <table className='checkout-page'>
-      <div>Checkout items</div>
+      <h1 className='checkout-title'>Checkout items</h1>
     {checkoutItems.length === 0 && <div>Your cart is empty, <Link to='/products'>continue shopping</Link></div>}
     {checkoutItems.map((product) => (
     <div key={product.id} className='checkout-container'>
       <div className='checkout-items'>
       <img src={product.url} alt="icons" className='checkout-img'/>
-        <p className='checkout-title-price'>{product.title} {product.price} SEK</p>
+        <p className='checkout-title-price'>{product.title} {product.price} kr</p>
         <div className='btns'>
-        <button className='minus-btn'>-</button>
+        <motion.button 
+        whileTap={{scale: 1.2}}
+        className='minus-btn'>-</motion.button>
         <p>Antal</p>
-        <button className='plus-btn'>+</button>
-        <button className='delete-btn' onClick={() => deleteItem(product)}>Delete</button></div>
+        <motion.button 
+        whileTap={{scale: 1.2}}
+        className='plus-btn'>+</motion.button>
+        <motion.button
+        whileHover={{color: '#FFDEF6' }}
+        whileTap={{scale: 1.2}}
+        className='delete-btn' onClick={() => deleteItem(product)}>
+        <HiOutlineTrash />
+        </motion.button>
+        </div>
       </div>
     </div>
   ))}
-  <div className='total'>Total price: {sum}</div>
+  <div className='total'>Total price: {sum} kr</div>
   </table>);
 }
 

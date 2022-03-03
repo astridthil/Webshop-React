@@ -13,6 +13,10 @@
   flex-direction: row;
 }
 
+.socmed-icons {
+  font-size: 20px;
+}
+
 .footer-contact-follow {
   display: flex;
   flex-direction: row;
@@ -21,10 +25,13 @@
 }
 
 .footer {
-  background-color: lightblue;
+  background-color: #FBEAF4;
   width: 100%;
-  padding: 2rem;
   bottom: 0;
+  border-radius: 15px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: #393939;
 }
 
 .footer-copy {
@@ -32,17 +39,24 @@
   text-align: center;
 }
 
+.contact-title {
+  margin-bottom: 1rem;
+}
+.follow-title {
+  margin-bottom: 1rem;
+}
+
 .productpage-info {
   width: 20rem;
   height: 25rem;
   text-align: left;
+  color: #393939;
 }
 
 .productpage {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: rgb(216, 213, 210);
   width: 50rem;
   margin: auto;
   margin-top: 10rem;
@@ -50,9 +64,25 @@
 
 .product-img {
   height: 20rem;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   margin: 1rem;
 
+}
+
+.productpage-input {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-color: #FBEAF4;
+  border-style: solid;
+  margin-right: 1rem;
+}
+
+.cartbtn {
+  background-color: #FBEAF4;
+  border-color: transparent;
+  width: 14rem;
+  height: 2rem;
+  font-size: 17px;
+  color: #393939;
 }
 
 
@@ -60,10 +90,8 @@
 .checkout-items {
   display: flex;
   flex-direction: row;
-  background-color: lightcoral;
   width: 40rem;
   align-items: center;
-
 }
 
 .checkout-img {
@@ -73,13 +101,11 @@
 .checkout-title-price {
   display: flex;
   flex-direction: row;
-  background-color: blue;
   width: 100%;
   margin: 1rem;
 }
 
 .checkout-page {
-  background-color: lightpink;
   display: flex;
   flex-direction: column;
   width: 40rem;
@@ -91,7 +117,6 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  background-color: aqua;
   width: 100%;
   margin: 1rem;
 }
@@ -106,6 +131,37 @@
   border-color: transparent;
 }
 
+.delete-btn {
+  background-color: transparent;
+  border-color: transparent;
+}
+
 .total {
   text-align: right;
+  background-color: #FBEAF4;
+  padding: 1rem;
+  border-radius: 15px;
+
+}
+
+.logo {
+  text-align: center;
+  color: #B9D8F6;
+  font-size: 55px;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.cart {
+  font-size: 25px;
+  text-align: right;
+}
+
+.products {
+  display: flex;
+  flex-direction: row;
 }

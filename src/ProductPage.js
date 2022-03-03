@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components';
+import { motion } from 'framer-motion'
 
 
 function ProductPage(props) {
@@ -30,22 +31,28 @@ return (
     <div className='productpage'>
       <img src={product.url} alt="icons" className='product-img'/>
       <div className='productpage-info'>
-        <h1>{product.title}</h1>
-        <p>{product.price} SEK</p>
-        <p>About the product: {product.description}</p>
+        <motion.h1
+        initial={{x: 100, opacity: 0}}
+        animate={{fontSize: 200, x: 0, opacity: 1}}
+        transition={{duration: 0.8}}
+        style={titleStyle}
+        >{product.title}</motion.h1>
+        <p>{product.price} kr</p>
+        <p>{product.description}</p>
         <p>Products in stock: {product.storage}</p>
-        <input></input>
-        <Button>
-        <button onClick={() => addToCheckout(product)} className='cartbtn'>Add to cart</button>
-        </Button>
+        <input className='productpage-input'></input>
+        <motion.button
+        whileHover={{backgroundColor: '#EFE1E9'}}
+        whileTap={{scale: 0.9}}
+        onClick={() => addToCheckout(product)} className='cartbtn'>Add to cart</motion.button>
         </div>
     </div>
   )
 }
 
-const Button = styled.button`
-background-color: transparent;
-`
+const titleStyle = {
+  color: '#B9D8F6'
+};
 
 
 export default ProductPage
