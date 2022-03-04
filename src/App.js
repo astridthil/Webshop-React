@@ -4,9 +4,7 @@ import Product from './Product.js';
 import ProductPage from './ProductPage';
 import Checkout from './Checkout';
 import { useState } from 'react';
-import {Link} from 'react-router-dom'
 import Footer from './Footer'
-import ProductList from './ProductList';
 import Header from './Header';
 
 

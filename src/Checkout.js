@@ -11,7 +11,6 @@ function Checkout(props) {
       console.log(filteredItems)
       setCheckoutItems(filteredItems)
     }
-    
 
     console.log(props);
 
@@ -24,15 +23,20 @@ function Checkout(props) {
     <div key={product.id} className='checkout-container'>
       <div className='checkout-items'>
       <img src={product.url} alt="icons" className='checkout-img'/>
-        <p className='checkout-title-price'>{product.title} {product.price} kr</p>
+      <div className='checkout-title-price'>
+      <Link to={`/products/${product.id}`} style={linkStyle}><p>{product.title}</p></Link>
+      <p>{product.price} kr</p>
+      </div>
         <div className='btns'>
         <motion.button 
         whileTap={{scale: 1.2}}
-        className='minus-btn'>-</motion.button>
+        className='minus-btn'
+        >-</motion.button>
         <p>Antal</p>
         <motion.button 
         whileTap={{scale: 1.2}}
-        className='plus-btn'>+</motion.button>
+        className='plus-btn'
+        >+</motion.button>
         <motion.button
         whileHover={{color: '#FFDEF6' }}
         whileTap={{scale: 1.2}}
@@ -46,5 +50,11 @@ function Checkout(props) {
   <div className='total'>Total price: {sum} kr</div>
   </table>);
 }
+
+const linkStyle = {
+  marginRight: "1rem",
+  textDecoration: "none",
+  color: '#393939'
+};
 
 export default Checkout

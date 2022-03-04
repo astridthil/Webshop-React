@@ -85,13 +85,16 @@
   color: #393939;
 }
 
-
+.checkout-title {
+  color: #B9D8F6;
+}
 
 .checkout-items {
   display: flex;
   flex-direction: row;
   width: 40rem;
   align-items: center;
+  color: #393939;
 }
 
 .checkout-img {
@@ -141,6 +144,7 @@
   background-color: #FBEAF4;
   padding: 1rem;
   border-radius: 15px;
+  margin-bottom: 3rem;
 
 }
 
