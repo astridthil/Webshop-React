@@ -4,7 +4,7 @@ import { HiOutlineTrash } from "react-icons/hi";
 import { motion } from 'framer-motion'
 
 function Checkout(props) {
-    const { checkoutItems, sum, setCheckoutItems, handleDecrement, handleIncrement, count } = props;
+    const { checkoutItems, sum, setCheckoutItems, handleDecrement, handleIncrement, qty } = props;
     
 
     const deleteItem = (product) => {
@@ -34,7 +34,7 @@ function Checkout(props) {
         className='minus-btn'
         onClick={handleDecrement}
         >-</motion.button>
-        <p>{count}</p>
+        <p>{qty}</p>
         <motion.button 
         whileTap={{scale: 1.2}}
         className='plus-btn'

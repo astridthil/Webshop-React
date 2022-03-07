@@ -10,7 +10,8 @@ import Header from './Header';
 
 function App() {
   const [checkoutItems, setCheckoutItems] = useState([]);
-  const [sum, setSum] = useState(0)
+  const [sum, setSum] = useState(0);
+  const [qty, setQty] = useState(1);
 
 
 
@@ -23,13 +24,11 @@ function App() {
           setSum(sum + product.price)
         }
     }
-
-      const [count, setCount] = useState(1);
       const handleIncrement = () => {
-        setCount(prevCount => prevCount + 1);
+        setQty(prevCount => prevCount + 1);
       };
       const handleDecrement = () => {
-        setCount(prevCount => prevCount - 1);
+        setQty(prevCount => prevCount - 1);
       };
 
 
@@ -49,7 +48,7 @@ function App() {
         setCheckoutItems={setCheckoutItems}
         handleDecrement={handleDecrement}
         handleIncrement={handleIncrement}
-        count={count}/>} />
+        qty={qty}/>} />
       </Routes>
       <Footer />
       </BrowserRouter>
