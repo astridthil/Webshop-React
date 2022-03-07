@@ -32,7 +32,7 @@ useEffect( () => {
       <div>
        <article key={product.id}>
          <div className='products-product'>
-            <img src={product.url} alt="icons" className='product-img'/>
+            <img src={product.url} alt="icons" className='products-img'/>
             <Link style={linkStyle} to={`/products/${product.id}`}><h1>{product.title}</h1></Link>
             <p>{product.price} kr</p>
             <motion.button 
