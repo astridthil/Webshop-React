@@ -59,4 +59,6 @@ const linkStyle = {
   color: '#393939'
 };
 
+
+
 export default Checkout

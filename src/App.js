@@ -19,10 +19,10 @@ function App() {
         setCheckoutItems([...checkoutItems, product]);
     }
       const handleIncrement = () => {
-        setQty(prevCount => prevCount + 1);
+        setQty(prevCount => qty + 1);
       };
       const handleDecrement = () => {
-        setQty(prevCount => prevCount - 1);
+        setQty(prevCount => qty - 1);
       };
 
       useEffect(() => {
@@ -46,7 +46,9 @@ function App() {
         <Route path='/products' element={<Product />} />
         <Route path='/products/:id' element={<ProductPage 
         addToCheckout={addToCheckout} 
-        checkoutItems={checkoutItems}/>} />
+        checkoutItems={checkoutItems}
+        qty={qty}
+        setQty={setQty}/>} />
         <Route path='/checkout' element={<Checkout 
         setCheckoutItems={setCheckoutItems}
         addToCheckout={addToCheckout} 

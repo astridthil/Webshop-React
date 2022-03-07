@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import styled from 'styled-components';
 import { motion } from 'framer-motion'
 
 
 function ProductPage(props) {
-  const { addToCheckout, setSum, sum } = props;
+  const { addToCheckout, qty, setQty } = props;
 
 //Hämta enskilt api
     const [product, setProduct] = useState([]);
@@ -40,7 +39,7 @@ return (
         <p>{product.price} kr</p>
         <p>{product.description}</p>
         <p>Products in stock: {product.storage}</p>
-        <input className='productpage-input'></input>
+        <input className='productpage-input' value={qty} onChange={e=>setQty(e.target.value)}></input>
         <motion.button
         whileHover={{backgroundColor: '#EFE1E9'}}
         whileTap={{scale: 0.9}}
@@ -53,6 +52,8 @@ return (
 const titleStyle = {
   color: '#B9D8F6'
 };
+
+
 
 
 export default ProductPage
