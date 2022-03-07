@@ -9,7 +9,6 @@ function Checkout(props) {
 
     const deleteItem = (product) => {
       let filteredItems = checkoutItems.filter(p => p.id !== product.id)
-      console.log(filteredItems)
       setCheckoutItems(filteredItems)
     }
 
@@ -19,7 +18,7 @@ function Checkout(props) {
   return (
     <table className='checkout-page'>
       <h1 className='checkout-title'>Checkout items</h1>
-    {checkoutItems.length === 0 && <div>Your cart is empty, <Link to='/products'>continue shopping</Link></div>}
+    {checkoutItems.length === 0 && <div>Your cart is empty, <Link style={linkStyle} to='/products'>continue shopping</Link></div>}
     {checkoutItems.map((product) => (
     <div key={product.id} className='checkout-container'>
       <div className='checkout-items'>

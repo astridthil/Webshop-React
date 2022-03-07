@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 
 
@@ -26,21 +27,33 @@ useEffect( () => {
 
 
   return (
-    products.map((product) => (
-      <div className='products'>
+    <div className='products'>
+    {products.map((product) => (
+      <div>
        <article key={product.id}>
+         <div className='products-product'>
             <img src={product.url} alt="icons" className='product-img'/>
-            <Link to={`/products/${product.id}`}><h1>{product.title}</h1></Link>
-            <p>{product.price}</p>
-            <p>{product.storage}</p>
-            <button >Add to cart</button>
+            <Link style={linkStyle} to={`/products/${product.id}`}><h1>{product.title}</h1></Link>
+            <p>{product.price} kr</p>
+            <motion.button 
+            className='cartbtn'
+            whileHover={{backgroundColor: '#EFE1E9'}}
+            whileTap={{scale: 0.9}}
+            >Add to cart</motion.button>
+            </div>
         </article>
     
       </div>
-      ))
+      ))}
+      </div>
   )
 }
 
+const linkStyle = {
+  marginRight: "1rem",
+  textDecoration: "none",
+  color: '#393939'
+}
 
 
 export default Product

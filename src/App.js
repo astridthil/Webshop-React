@@ -37,10 +37,14 @@ function App() {
       <BrowserRouter>
       <Header />
       <Routes>
+      <Route path='/' element={<Product />} />
         <Route path='/products' element={<Product />} />
-        <Route path='/products/:id' element={<ProductPage setSum = {setSum} sum = {sum}  addToCheckout={addToCheckout} checkoutItems={checkoutItems}/>} />
-        <Route path='/checkout' element=
-        {<Checkout 
+        <Route path='/products/:id' element={<ProductPage 
+        setSum = {setSum} 
+        sum = {sum}  
+        addToCheckout={addToCheckout} 
+        checkoutItems={checkoutItems}/>} />
+        <Route path='/checkout' element={<Checkout 
         setCheckoutItems={setCheckoutItems}
         sum = {sum} 
         addToCheckout={addToCheckout} 

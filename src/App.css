@@ -168,4 +168,12 @@
 .products {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 70rem;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 3rem;
+
 }
+

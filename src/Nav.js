@@ -8,9 +8,8 @@ function Nav() {
   return (
     <div className='nav'>
         <div className='nav-links'>
-        <p> <Link to='/' style={linkStyle}>home</Link> </p>
-        <p> <Link to='/checkout' style={linkStyle}>checkout</Link> </p>
         <p> <Link to='/products' style={linkStyle}>Our cakes <RiCake2Fill /></Link> </p>
+        <p> <Link to='/checkout' style={linkStyle}>Checkout</Link> </p>
         </div>
     </div>
   )
