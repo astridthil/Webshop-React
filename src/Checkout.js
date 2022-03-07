@@ -4,7 +4,8 @@ import { HiOutlineTrash } from "react-icons/hi";
 import { motion } from 'framer-motion'
 
 function Checkout(props) {
-    const { checkoutItems, sum, setCheckoutItems } = props;
+    const { checkoutItems, sum, setCheckoutItems, handleDecrement, handleIncrement, count } = props;
+    
 
     const deleteItem = (product) => {
       let filteredItems = checkoutItems.filter(p => p.id !== product.id)
@@ -31,11 +32,13 @@ function Checkout(props) {
         <motion.button 
         whileTap={{scale: 1.2}}
         className='minus-btn'
+        onClick={handleDecrement}
         >-</motion.button>
-        <p>Antal</p>
+        <p>{count}</p>
         <motion.button 
         whileTap={{scale: 1.2}}
         className='plus-btn'
+        onClick={handleIncrement}
         >+</motion.button>
         <motion.button
         whileHover={{color: '#FFDEF6' }}

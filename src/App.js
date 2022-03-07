@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Product from './Product.js';
 import ProductPage from './ProductPage';
 import Checkout from './Checkout';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Footer from './Footer'
 import Header from './Header';
 
@@ -11,6 +11,7 @@ import Header from './Header';
 function App() {
   const [checkoutItems, setCheckoutItems] = useState([]);
   const [sum, setSum] = useState(0)
+
 
 
     const addToCheckout = (product) => {
@@ -23,6 +24,15 @@ function App() {
         }
     }
 
+      const [count, setCount] = useState(1);
+      const handleIncrement = () => {
+        setCount(prevCount => prevCount + 1);
+      };
+      const handleDecrement = () => {
+        setCount(prevCount => prevCount - 1);
+      };
+
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -30,7 +40,16 @@ function App() {
       <Routes>
         <Route path='/products' element={<Product />} />
         <Route path='/products/:id' element={<ProductPage setSum = {setSum} sum = {sum}  addToCheckout={addToCheckout} checkoutItems={checkoutItems}/>} />
-        <Route path='/checkout' element={<Checkout setCheckoutItems={setCheckoutItems} sum = {sum} addToCheckout={addToCheckout} checkoutItems={checkoutItems} setCheckoutItems={setCheckoutItems}/>} />
+        <Route path='/checkout' element=
+        {<Checkout 
+        setCheckoutItems={setCheckoutItems}
+        sum = {sum} 
+        addToCheckout={addToCheckout} 
+        checkoutItems={checkoutItems} 
+        setCheckoutItems={setCheckoutItems}
+        handleDecrement={handleDecrement}
+        handleIncrement={handleIncrement}
+        count={count}/>} />
       </Routes>
       <Footer />
       </BrowserRouter>
