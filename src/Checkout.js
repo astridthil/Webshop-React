@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom'
 import { HiOutlineTrash } from "react-icons/hi";
 import { motion } from 'framer-motion'
 
 function Checkout(props) {
-    const { checkoutItems, sum, setCheckoutItems, handleDecrement, handleIncrement, qty } = props;
+    const { checkoutItems, setCheckoutItems, handleDecrement, handleIncrement, qty, checkoutTotal } = props;
     
 
     const deleteItem = (product) => {
@@ -49,7 +49,7 @@ function Checkout(props) {
       </div>
     </div>
   ))}
-  <div className='total'>Total price: {sum} kr</div>
+  <div className='total'>Total price: {checkoutTotal} kr</div>
   </table>);
 }
 

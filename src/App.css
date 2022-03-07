@@ -85,6 +85,15 @@
   color: #393939;
 }
 
+.products-cartbtn {
+  background-color: #FBEAF4;
+  border-color: transparent;
+  width: 95%;
+  height: 2rem;
+  font-size: 17px;
+  color: #393939;
+}
+
 .checkout-title {
   color: #B9D8F6;
 }

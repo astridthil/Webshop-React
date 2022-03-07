@@ -36,7 +36,7 @@ useEffect( () => {
             <Link style={linkStyle} to={`/products/${product.id}`}><h1>{product.title}</h1></Link>
             <p>{product.price} kr</p>
             <motion.button 
-            className='cartbtn'
+            className='products-cartbtn'
             whileHover={{backgroundColor: '#EFE1E9'}}
             whileTap={{scale: 0.9}}
             >Add to cart</motion.button>
