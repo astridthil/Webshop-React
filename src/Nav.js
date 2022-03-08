@@ -1,15 +1,14 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import { RiCake2Fill } from "react-icons/ri";
-import styled from 'styled-components';
-import { motion } from 'framer-motion'
+import { TiShoppingCart } from "react-icons/ti";
 
 function Nav() {
   return (
     <div className='nav'>
         <div className='nav-links'>
         <p> <Link to='/products' style={linkStyle}>Our cakes <RiCake2Fill /></Link> </p>
-        <p> <Link to='/checkout' style={linkStyle}>Checkout</Link> </p>
+        <p> <Link to='/checkout' style={linkStyle}>Checkout <TiShoppingCart /></Link> </p>
         </div>
     </div>
   )

@@ -179,7 +179,7 @@
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 60rem;
+  max-width: 70rem;
   align-items: center;
   margin: auto;
   margin-bottom: 3rem;
@@ -189,5 +189,9 @@
   height: 20rem;
   width: 15rem;
   margin: 1rem;
+}
+
+.products-product {
+  margin: 3rem;
 }
 

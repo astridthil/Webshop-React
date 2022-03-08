@@ -11,8 +11,11 @@ function Checkout(props) {
       let filteredItems = checkoutItems.filter(p => p.id !== product.id)
       setCheckoutItems(filteredItems)
     }
+    
 
-    console.log(props);
+    const increment = (product) => {
+      
+    }
 
     
   return (
@@ -33,11 +36,11 @@ function Checkout(props) {
         className='minus-btn'
         onClick={handleDecrement}
         >-</motion.button>
-        <p>{qty}</p>
+        <p>{product.quantity}</p>
         <motion.button 
         whileTap={{scale: 1.2}}
         className='plus-btn'
-        onClick={handleIncrement}
+        onClick={() => increment(product)}
         >+</motion.button>
         <motion.button
         whileHover={{color: '#FFDEF6' }}
@@ -49,6 +52,7 @@ function Checkout(props) {
       </div>
     </div>
   ))}
+
   <div className='total'>Total price: {checkoutTotal} kr</div>
   </table>);
 }
@@ -58,6 +62,7 @@ const linkStyle = {
   textDecoration: "none",
   color: '#393939'
 };
+
 
 
 

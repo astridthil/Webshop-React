@@ -39,7 +39,7 @@ return (
         <p>{product.price} kr</p>
         <p>{product.description}</p>
         <p>Products in stock: {product.storage}</p>
-        <input className='productpage-input' value={qty} onChange={e=>setQty(e.target.value)}></input>
+        <input className='productpage-input' value={qty} onChange={e=>setQty(Number(e.target.value))}></input>
         <motion.button
         whileHover={{backgroundColor: '#EFE1E9'}}
         whileTap={{scale: 0.9}}

@@ -9,6 +9,7 @@ import Header from './Header';
 
 
 function App() {
+
   const [checkoutItems, setCheckoutItems] = useState([]);
   const [qty, setQty] = useState(1);
   const [checkoutTotal, setCheckoutTotal] = useState(0);
@@ -16,13 +17,23 @@ function App() {
 
 
     const addToCheckout = (product) => {
-        setCheckoutItems([...checkoutItems, product]);
+
+      
+          const check_index = checkoutItems.findIndex(item => item.id === product.id);
+          if (check_index !== -1) {
+
+            product = Object.assign({}, {...product}, {quantity : qty + 1})
+
+            setCheckoutItems([...checkoutItems, product]);
+
+          } else {
+            setCheckoutItems([...checkoutItems, product]);
+          }
+    
     }
-      const handleIncrement = () => {
-        setQty(prevCount => qty + 1);
-      };
-      const handleDecrement = () => {
-        setQty(prevCount => qty - 1);
+
+      function handleDecrement() {
+        setQty(prevQty => prevQty - 1);
       };
 
       useEffect(() => {
@@ -42,8 +53,8 @@ function App() {
       <BrowserRouter>
       <Header />
       <Routes>
-        <Route path='/' element={<Product />} />
-        <Route path='/products' element={<Product />} />
+        <Route path='/' element={<Product addToCheckout={addToCheckout}/>} />
+        <Route path='/products' element={<Product addToCheckout={addToCheckout}/>} />
         <Route path='/products/:id' element={<ProductPage 
         addToCheckout={addToCheckout} 
         checkoutItems={checkoutItems}
@@ -55,7 +66,6 @@ function App() {
         checkoutItems={checkoutItems} 
         setCheckoutItems={setCheckoutItems}
         handleDecrement={handleDecrement}
-        handleIncrement={handleIncrement}
         checkoutTotal={checkoutTotal}
         qty={qty}/>} />
       </Routes>

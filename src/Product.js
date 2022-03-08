@@ -4,8 +4,8 @@ import { motion } from 'framer-motion'
 
 
 
-function Product({product}) {
-  const [selectedId, setSelectedId] = useState(null)
+function Product(props) {
+  const { addToCheckout } = props;
   const [products, setProducts] = useState([]);
   const fetchData = async () => {
       try {
@@ -39,6 +39,7 @@ useEffect( () => {
             className='products-cartbtn'
             whileHover={{backgroundColor: '#EFE1E9'}}
             whileTap={{scale: 0.9}}
+            onClick={() => addToCheckout(product)}
             >Add to cart</motion.button>
             </div>
         </article>
