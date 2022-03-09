@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
 import { motion } from 'framer-motion'
 
-
-
 function Product(props) {
   const { addToCheckout } = props;
   const [products, setProducts] = useState([]);
@@ -23,9 +21,6 @@ useEffect( () => {
   fetchData();
 }, [])
 
-
-
-
   return (
     <div className='products'>
     {products.map((product) => (
@@ -40,9 +35,10 @@ useEffect( () => {
             whileHover={{backgroundColor: '#EFE1E9'}}
             whileTap={{scale: 0.9}}
             onClick={() => addToCheckout(product)}
-            >Add to cart</motion.button>
-            </div>
-        </article>
+            >Add to cart
+            </motion.button>
+         </div>
+       </article>
     
       </div>
       ))}
